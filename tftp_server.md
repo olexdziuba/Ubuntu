@@ -18,3 +18,5 @@ TFTP_OPTIONS is set to –secure. This variable sets the TFTP options. There are
 ### restart the tftpd-hpa service
 sudo systemctl restart tftpd-hpa
 
+source:
+https://linuxhint.com/install_tftp_server_ubuntu/
