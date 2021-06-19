@@ -143,7 +143,7 @@ Vérification du profil Apache Full, il devrait autoriser le trafic pour les por
 
 ![](images/image15.png)
 
-### Verification Apache
+### Verification d'apache
 
 Pour vérifier Apache  il faut taper adresse ip dans votre browser
 
@@ -153,15 +153,15 @@ Si vous voyez cette page, votre serveur Web est correctement installé et access
 
 ### Verification  d'accès de site1.com et site2.com
 
-Parce que ses sites sont créés pour le test et  on pas enregistrer les domain name, pour vérification on va configurer host file ordinateur local. Si vous utiliser Windows:
+Parce que ses sites sont créés pour le test et on n'a pas enregistré les domain names, pour vérification on va configurer *hosts* file d'ordinateur local. Si vous utiliser Windows:
 
 *C:\\windows\\system32\\drivers\\etc\\hosts*
 
-Pour linux il faut corriger
+Pour Linux il faut corriger:
 
 */etc/hosts*
 
-Il faut ajouter :
+Il faut ajouter:
 
 *xxx.xxx.xxx.xxx site1.com*  
 *xxx.xxx.xxx.xxx site2.com*  
