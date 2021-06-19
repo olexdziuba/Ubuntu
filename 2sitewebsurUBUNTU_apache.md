@@ -36,13 +36,13 @@ Pour installer quelques sites web sur le même serveur il faut créer quelques d
 
 ![](images/image4.png)
 
-On va créer deux  index.html pour faire la vérification et bien identifier chaque site.
+On va créer deux  *index.html* pour faire la vérification et bien identifier chaque site.
 
 *olex@ubuntu:\~\$ sudo vim /var/www/site1.com/public\_html/index.html*
 
 ![](images/image22.png)
 
-Et ajouter texte suivante:
+Et ajouter le texte suivant:
 
  *\<html\>*  
     *\<body\>*  
@@ -52,7 +52,7 @@ Et ajouter texte suivante:
 
 ![](images/image19.png)
 
-Pour site2.com il faut faire meme chose:
+Pour *site2.com* il faut faire meme chose:
 
 *olex@ubuntu:\~\$ sudo vim /var/www/site2.com/public\_html/index.html*
 
@@ -60,7 +60,7 @@ Pour site2.com il faut faire meme chose:
 
  
 
-Et ajouter texte suivante:
+Et ajouter le texte suivant:
 
 *\<html\>*  
    *\<body\>*  
@@ -70,7 +70,7 @@ Et ajouter texte suivante:
 
 ![](images/image14.png)
 
-Creation new virtual hosts files.
+Creation de nouveaux  virtual hosts files.
 
 Apres installation, Apache crée le configuration file par défaut dans le dossier */etc/apache2/sites-available/000-default.conf*
 
