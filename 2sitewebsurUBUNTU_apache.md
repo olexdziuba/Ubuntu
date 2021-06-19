@@ -72,9 +72,9 @@ Et ajouter le texte suivant:
 
 Creation de nouveaux  virtual hosts files.
 
-Apres installation, Apache crée le configuration file par défaut dans le dossier */etc/apache2/sites-available/000-default.conf*
+Apres l'installation, Apache crée le configuration file par défaut dans le dossier */etc/apache2/sites-available/000-default.conf*
 
-On va copier se file  pour chaque site avec extension *.conf*
+On va copier se file pour chaque site avec extension *.conf*
 
 *olex@ubuntu:\~\$ sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/site1.com.conf*
 
@@ -84,13 +84,13 @@ On va copier se file  pour chaque site avec extension *.conf*
 
 ![](images/image12.png)
 
-On va configurer ses fils:
+On va configurer ses files:
 
 *olex@ubuntu:\~\$ sudo vim /etc/apache2/sites-available/site1.com.conf*
 
 ![](images/image23.png)
 
-Il faut ajouter/corriger information suivantes:
+Il faut ajouter/corriger l'information suivante:
 
     *ServerAdmin admin@site1.com*  
     *ServerName site1.com*  
@@ -107,7 +107,7 @@ olex@ubuntu:\~\$ sudo vim /etc/apache2/sites-available/site2.com.conf
 
 ![](images/image3.png)
 
-Il faut ajouter/corriger information suivantes:
+Il faut ajouter/corriger l'information suivante:
 
     *ServerAdmin admin@site2.com*  
     *ServerName site2.com*  
@@ -116,7 +116,7 @@ Il faut ajouter/corriger information suivantes:
 
 ![](images/image21.png)
 
-Nous avons créé des fichiers de configuration pour les hôtes virtuels. Maintenant, vous devez les activer :
+Nous avons créé des fichiers de configuration pour les hôtes virtuels. Maintenant, vous devez les activer:
 
 *sudo a2ensite site1.com.conf*  
 *sudo a2ensite site2.com.conf*  
@@ -129,7 +129,7 @@ Restart Apache
 
 ![](images/image11.png)
 
-Verification FW
+#### Verification de firefall
 
 Vous devez vérifier que votre pare-feu autorise le trafic HTTP et HTTPS:
 
