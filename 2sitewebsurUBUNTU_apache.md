@@ -1,6 +1,6 @@
-## Installation deux site web sur UBUNTU en utilisant APACHE
+## Installation de deux sites web sur UBUNTU en utilisant APACHE
 
-Pour Installation  je vais utiliser Ubuntu 18.04 installé sur  vmware workstation, carte réseau je vais configurer en mode bridge pour avoir accès à partir de MobaXterm. Pour vérifier accès à des sites web je vais utiliser Raspberry Pi qui est dans le même réseau.  Pour installer quelques sites sur un serveur on va configurer les virtual hosts sur Apache.
+Pour l'installation je vais utiliser Ubuntu 18.04 installé sur  vmware workstation, carte réseau je vais configurer en mode bridge pour avoir accès à partir de MobaXterm. Pour vérifier l'accès aux sites web je vais utiliser Raspberry Pi qui est dans le même réseau.  Pour installer quelques sites sur un serveur on va configurer les virtual hosts sur Apache.
 
 Premièrement il faut  faire une mise à jour de votre système:
 
@@ -8,7 +8,7 @@ Premièrement il faut  faire une mise à jour de votre système:
 
 ![](images/image20.png)
 
-### Installation Apache
+### Installation d'pache
 
 *olex@ubuntu:\~\$ sudo apt-get install apache2*
 
@@ -22,7 +22,7 @@ Pour installer quelques sites web sur le même serveur il faut créer quelques d
 
 ![](images/image16.png)
 
- Il faut changer droit accès pour current user
+ Il faut changer droit d'accès pour current user
 
 *olex@ubuntu:\~\$ sudo chown -R \$USER:\$USER /var/www/site1.com/public\_html*
 
@@ -32,7 +32,7 @@ Pour installer quelques sites web sur le même serveur il faut créer quelques d
 
  Pour que les sites soient accessibles aux utilisateurs dans le navigateur, vous devez autoriser la lecture des fichiers dans ces répertoires
 
-olex@ubuntu:\~\$ sudo chmod -R 755 /var/www
+*olex@ubuntu:\~\$ sudo chmod -R 755 /var/www*
 
 ![](images/image4.png)
 
