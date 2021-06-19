@@ -1,6 +1,6 @@
 ## Installation deux site web sur UBUNTU en utilisant APACHE
 
-Pour Installation  je vais utiliser Ubuntu 18.04 installé sur  vmware workstation, carte réseau je vais configurer en mode bridge. Pour vérifier accès à des sites web je vais utiliser Raspberry Pi qui est dans le même réseau.  Pour installer quelques sites sur un serveur on va configurer les virtual hosts sur Apache.
+Pour Installation  je vais utiliser Ubuntu 18.04 installé sur  vmware workstation, carte réseau je vais configurer en mode bridge pour avoir accès à partir de MobaXterm. Pour vérifier accès à des sites web je vais utiliser Raspberry Pi qui est dans le même réseau.  Pour installer quelques sites sur un serveur on va configurer les virtual hosts sur Apache.
 
 Premièrement il faut  faire une mise à jour de votre système:
 
