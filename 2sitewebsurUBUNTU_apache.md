@@ -92,19 +92,16 @@ On va configurer ses fils:
 
 Il faut ajouter/corriger information suivantes:
 
-    ServerAdmin admin@site1.com
-
-    ServerName site1.com
-
-    ServerAlias www.site1.com
-
-    DocumentRoot /var/www/site1.com/public\_html
+    *ServerAdmin admin@site1.com*  
+    *ServerName site1.com*  
+    *ServerAlias www.site1.com*  
+    *DocumentRoot /var/www/site1.com/public\_html*  
 
    
 
 ![](images/image5.png)
 
-Pour site2.com il faut faire meme chose
+Pour *site2.com* il faut faire meme chose
 
 olex@ubuntu:\~\$ sudo vim /etc/apache2/sites-available/site2.com.conf
 
@@ -112,27 +109,23 @@ olex@ubuntu:\~\$ sudo vim /etc/apache2/sites-available/site2.com.conf
 
 Il faut ajouter/corriger information suivantes:
 
-    ServerAdmin admin@site2.com
-
-    ServerName site2.com
-
-    ServerAlias www.site2.com
-
-    DocumentRoot /var/www/site2.com/public\_html
+    *ServerAdmin admin@site2.com*  
+    *ServerName site2.com*  
+    *ServerAlias www.site2.com*  
+    *DocumentRoot /var/www/site2.com/public\_html*  
 
 ![](images/image21.png)
 
 Nous avons créé des fichiers de configuration pour les hôtes virtuels. Maintenant, vous devez les activer :
 
-sudo a2ensite site1.com.conf
-
-sudo a2ensite site2.com.conf
+*sudo a2ensite site1.com.conf*  
+*sudo a2ensite site2.com.conf*  
 
 ![](images/image6.png)
 
 Restart Apache
 
-olex@ubuntu:\~\$ sudo service apache2 restart
+*olex@ubuntu:\~\$ sudo service apache2 restart*
 
 ![](images/image11.png)
 
@@ -140,13 +133,13 @@ Verification FW
 
 Vous devez vérifier que votre pare-feu autorise le trafic HTTP et HTTPS:
 
-olex@ubuntu:\~\$ sudo ufw app list
+*olex@ubuntu:\~\$ sudo ufw app list*
 
 ![](images/image10.png)
 
 Vérification du profil Apache Full, il devrait autoriser le trafic pour les ports 80 et 443 :
 
-olex@ubuntu:\~\$ sudo ufw app info "Apache Full"
+*olex@ubuntu:\~\$ sudo ufw app info "Apache Full"*
 
 ![](images/image15.png)
 
@@ -158,29 +151,27 @@ Pour vérifier Apache  il faut taper adresse ip dans votre browser
 
 Si vous voyez cette page, votre serveur Web est correctement installé et accessible via un pare-feu.
 
-Verification  d'accès de site1.com et site2.com
+### Verification  d'accès de site1.com et site2.com
 
 Parce que ses sites sont créés pour le test et  on pas enregistrer les domain name, pour vérification on va configurer host file ordinateur local. Si vous utiliser Windows:
 
-C:\\windows\\system32\\drivers\\etc\\hosts
+*C:\\windows\\system32\\drivers\\etc\\hosts*
 
 Pour linux il faut corriger
 
-/etc/hosts
+*/etc/hosts*
 
 Il faut ajouter :
 
-xxx.xxx.xxx.xxx site1.com
+*xxx.xxx.xxx.xxx site1.com*  
+*xxx.xxx.xxx.xxx site2.com*  
 
-xxx.xxx.xxx.xxx site2.com
-
-(xxx.xxx.xxx.xxx adresse IP votre serveur web)
+(*xxx.xxx.xxx.xxx* adresse IP votre serveur web)
 
 Dans mon cas cela:
 
-192.168.0.49 site1.com
-
-192.168.0.49 site2.com
+*192.168.0.49 site1.com*  
+*192.168.0.49 site2.com*  
 
 ![](images/image13.png)
 
