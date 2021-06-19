@@ -44,15 +44,11 @@ On va créer deux  index.html pour faire la vérification et bien identifier ch
 
 Et ajouter texte suivante:
 
- *\<html\>*
- 
-   *\<body\>*
-   
-       *This is our site1.com website*
-       
-   *\</body\>*
-   
-  *\</html\>*
+ *\<html\>*  
+    *\<body\>*  
+          *This is our site1.com website*  
+    *\</body\>*  
+  *\</html\>*  
 
 ![](images/image19.png)
 
@@ -66,11 +62,11 @@ Pour site2.com il faut faire meme chose:
 
 Et ajouter texte suivante:
 
-*\<html\>*
-   *\<body\>*
-       *This is our site2.com website*
-   *\</body\>*
-  *\</html\>*
+*\<html\>*  
+   *\<body\>*  
+       *This is our site2.com website*  
+   *\</body\>*  
+  *\</html\>*  
 
 ![](images/image14.png)
 
