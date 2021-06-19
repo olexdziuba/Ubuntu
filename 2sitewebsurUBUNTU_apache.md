@@ -45,9 +45,13 @@ On va créer deux  index.html pour faire la vérification et bien identifier ch
 Et ajouter texte suivante:
 
  *\<html\>*
+ 
    *\<body\>*
+   
        *This is our site1.com website*
+       
    *\</body\>*
+   
   *\</html\>*
 
 ![](images/image19.png)
