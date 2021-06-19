@@ -8,7 +8,7 @@ Premièrement il faut  faire une mise à jour de votre système:
 
 ![](images/image20.png)
 
-### Installation d'pache
+### Installation d'apache
 
 *olex@ubuntu:\~\$ sudo apt-get install apache2*
 
@@ -30,7 +30,7 @@ Pour installer quelques sites web sur le même serveur il faut créer quelques d
 
 ![](images/image7.png)
 
- Pour que les sites soient accessibles aux utilisateurs dans le navigateur, vous devez autoriser la lecture des fichiers dans ces répertoires
+ Pour faire les sites accessibles aux utilisateurs dans le navigateur, vous devez autoriser la lecture des fichiers dans ces répertoires
 
 *olex@ubuntu:\~\$ sudo chmod -R 755 /var/www*
 
