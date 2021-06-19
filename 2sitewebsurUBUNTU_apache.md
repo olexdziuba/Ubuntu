@@ -8,7 +8,7 @@ olex@ubuntu:\~\$ sudo apt update && sudo apt upgrade -y
 
 ![](images/image20.png)
 
-Installation Apache
+### Installation Apache
 
 olex@ubuntu:\~\$ sudo apt-get install apache2
 
@@ -158,7 +158,7 @@ olex@ubuntu:\~\$ sudo ufw app info "Apache Full"
 
 ![](images/image15.png)
 
-Verification Apache
+### Verification Apache
 
 Pour vérifier Apache  il faut taper adresse ip dans votre browser
 
