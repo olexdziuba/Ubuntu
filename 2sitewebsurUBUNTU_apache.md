@@ -4,29 +4,29 @@ Pour Installation  je vais utiliser Ubuntu 18.04 installé sur  vmware worksta
 
 Premièrement il faut  faire une mise à jour de votre système:
 
-olex@ubuntu:\~\$ sudo apt update && sudo apt upgrade -y
+*olex@ubuntu:\~\$ sudo apt update && sudo apt upgrade -y*
 
 ![](images/image20.png)
 
 ### Installation Apache
 
-olex@ubuntu:\~\$ sudo apt-get install apache2
+*olex@ubuntu:\~\$ sudo apt-get install apache2*
 
 ![](images/image1.png)
 
 Pour installer quelques sites web sur le même serveur il faut créer quelques dossiers. Je vais creer 2: site 1 et site 2.
 
-olex@ubuntu:\~\$ sudo mkdir -p /var/www/site1.com/public\_html
+*olex@ubuntu:\~\$ sudo mkdir -p /var/www/site1.com/public\_html*
 
-olex@ubuntu:\~\$ sudo mkdir -p /var/www/site2.com/public\_html
+*olex@ubuntu:\~\$ sudo mkdir -p /var/www/site2.com/public\_html*
 
 ![](images/image16.png)
 
  Il faut changer droit accès pour current user
 
-olex@ubuntu:\~\$ sudo chown -R \$USER:\$USER /var/www/site1.com/public\_html
+*olex@ubuntu:\~\$ sudo chown -R \$USER:\$USER /var/www/site1.com/public\_html*
 
-olex@ubuntu:\~\$ sudo chown -R \$USER:\$USER /var/www/site2.com/public\_html
+*olex@ubuntu:\~\$ sudo chown -R \$USER:\$USER /var/www/site2.com/public\_html*
 
 ![](images/image7.png)
 
@@ -38,27 +38,23 @@ olex@ubuntu:\~\$ sudo chmod -R 755 /var/www
 
 On va créer deux  index.html pour faire la vérification et bien identifier chaque site.
 
-olex@ubuntu:\~\$ sudo vim /var/www/site1.com/public\_html/index.html
+*olex@ubuntu:\~\$ sudo vim /var/www/site1.com/public\_html/index.html*
 
 ![](images/image22.png)
 
 Et ajouter texte suivante:
 
- \<html\>
-
-  \<body\>
-
-    This is our site1.com website
-
-  \</body\>
-
-\</html\>
+ *\<html\>*
+   *\<body\>*
+       *This is our site1.com website*
+   *\</body\>*
+  *\</html\>*
 
 ![](images/image19.png)
 
 Pour site2.com il faut faire meme chose:
 
-olex@ubuntu:\~\$ sudo vim /var/www/site2.com/public\_html/index.html
+*olex@ubuntu:\~\$ sudo vim /var/www/site2.com/public\_html/index.html*
 
 ![](images/image8.png)
 
@@ -66,35 +62,31 @@ olex@ubuntu:\~\$ sudo vim /var/www/site2.com/public\_html/index.html
 
 Et ajouter texte suivante:
 
-\<html\>
-
-  \<body\>
-
-    This is our site2.com website
-
-  \</body\>
-
-\</html\>
+*\<html\>*
+   *\<body\>*
+       *This is our site2.com website*
+   *\</body\>*
+  *\</html\>*
 
 ![](images/image14.png)
 
 Creation new virtual hosts files.
 
-Apres installation, Apache crée le configuration file par défaut dans le dossier /etc/apache2/sites-available/000-default.conf
+Apres installation, Apache crée le configuration file par défaut dans le dossier */etc/apache2/sites-available/000-default.conf*
 
-On va copier se file  pour chaque site avec extension .conf
+On va copier se file  pour chaque site avec extension *.conf*
 
-olex@ubuntu:\~\$ sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache                          2/sites-available/site1.com.conf
+*olex@ubuntu:\~\$ sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/site1.com.conf*
 
 ![](images/image9.png)
 
-olex@ubuntu:\~\$ sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache                          2/sites-available/site2.com.conf
+*olex@ubuntu:\~\$ sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/site2.com.conf*
 
 ![](images/image12.png)
 
 On va configurer ses fils:
 
-olex@ubuntu:\~\$ sudo vim /etc/apache2/sites-available/site1.com.conf
+*olex@ubuntu:\~\$ sudo vim /etc/apache2/sites-available/site1.com.conf*
 
 ![](images/image23.png)
 
