@@ -3,9 +3,9 @@ Installation LAMP pour installation de CMS (Joomla et Wordpress)
 
 ![](images/php.jpg)
 
-Dans [l'article précédent](https://olexdziuba.github.io/two_siteweb_UBUNTU_apache/), nous avons mis deux sites Web sur un serveur en utilisant Apache. Pour le test, nous avons utilisé deux sites Web simples créés en html. Maintenant on va installer les sites Web en utilisant le CMS. Alors installons un site sur WordPress et un autre sur Joomla
+Dans [l'article précédent](https://olexdziuba.github.io/two_siteweb_UBUNTU_apache/), nous avons mis deux sites Web sur un serveur en utilisant Apache. Pour le test, nous avons utilisé deux sites Web simples créés en html. Maintenant on va installer les sites Web en utilisant le CMS. Alors installons un site sur WordPress et un autre sur Joomla.
 
-Pour installer CMS comme WordPress ou Joomla il faut installer LAMP (Linux, Apache, MySQL, PHP), on a déjà installé Apache. Il reste à installer  MySQL et PHP et faire configuration d'apache. On va commencer d’installation MySQL
+Pour installer CMS comme WordPress ou Joomla il faut installer LAMP (Linux, Apache, MySQL, PHP). Jn a déjà installé Apache et il nous reste à installer MySQL et PHP et faire la configuration d'Apache. On va commencer l’installation de MySQL.
 
 #### Installation de MySQL
 
@@ -19,7 +19,7 @@ Configurer le plugin de validation de mot de passe
 
 ![](images/php19.png)
 
-Pour toutes les questions suivantes, entrez simplement Y et appuyez sur la touche ENTER pour sélectionner les paramètres par défaut. Cela supprimera certains utilisateurs et bases de données de test, désactivera l'accès à distance avec le compte utilisateur root et appliquera immédiatement toutes les modifications à MySQL.
+Pour toutes les questions suivantes, entrez simplement Y et appuyez sur la touche ENTER pour sélectionner les paramètres par défaut. Cela supprimera certains utilisateurs et bases de données de test, désactivera l'accès à distance avec le compte d'utilisateur root et appliquera immédiatement toutes les modifications à MySQL.
 
 ![](images/php17.png)
 
@@ -33,11 +33,11 @@ PHP est un composant qui traitera le code pour rendre le contenu dynamique. Nous
 
 Pour que notre serveur Web préfère les fichiers PHP, nous allons donc configurer Apache pour rechercher d'abord les fichiers index.php.
 
-On va corriger fichier:
+On va corriger le fichier:
 
 *olex@ubuntu:\~\$ sudo nano /etc/apache2/mods-enabled/dir.conf*
 
-Il faut déplacer le fichier d'index PHP *index.php* à la première place après la spécification *DirectoryIndex* comme ceci
+Il faut déplacer le fichier d'index PHP *index.php* à la première place après la spécification *DirectoryIndex* comme ceci:
 
 ![](images/php16.png)
 
@@ -45,11 +45,11 @@ Après cela, nous devons redémarrer Apache pour appliquer les modifications.
 
 ![](images/php7.png)
 
-vérifier l'état du service apache2 à l'aide de *systemctl*
+Vérifier l'état du service *apache2* à l'aide de *systemctl*
 
 ![](images/php13.png)
 
-Pour verification PHP on va créer *info.php* dans */var/www/html/*
+Pour verification de PHP on va créer *info.php* dans */var/www/html/*
 
 ![](images/php6.png)
 
@@ -63,17 +63,17 @@ On va ajouter:
 
 ![](images/php3.png)
 
-Apres on va aller:
+Après on va aller à:
 
 *http://IP_serveur/info.php*
 
-Et voilà, serveur PHP fonctionne:
+Et voilà, le serveur PHP fonctionne:
 
 ![](images/php11.png)
 
 
 
-#### Installation PHPMyAdmin
+#### Installation de PHPMyAdmin
 
 L’installation de PHPMyAdmin n’est pas du tout obligatoire mais cela nous facilitera la vie.
 
@@ -89,35 +89,35 @@ Lorsqu'on lui demande si *dbconfig-common* doit être utilisé pour configurer 
 
 ![](images/php5.png)
 
-Pour le mot de passe root, il s’agit de celui que vous aviez utilisé pour MySQL.
+Pour le mot de passe root, il s’agit de celui que vous avez utilisé pour MySQL.
 
-Vous pouvez choisir *password*. Il vaut mieux utiliser un mot de passe fort !
+Vous pouvez choisir *password*. Il vaut mieux utiliser un mot de passe fort!
 
 ![](images/php9.png)
 
-Le processus d'installation ajoutera le fichier de configuration phpMyAdmin au répertoire */etc/apache2/-enabled/*, où il sera lu automatiquement. Tout ce que vous avez à faire est d'activer explicitement l'extension PHP *mbstring*, ce qui peut être fait avec la commande suivante :
+Le processus d'installation ajoutera le fichier de configuration de phpMyAdmin au répertoire */etc/apache2/-enabled/*, où il sera lu automatiquement. Tout ce que vous avez à faire est d'activer explicitement l'extension PHP *mbstring*, ce qui peut être fait avec la commande suivante :
 
 *olex@ubuntu:\~\$ sudo phpenmod mbstring*
 
 ![](images/php10.png)
 
-Après il faut redémarrer Apache
+Après il faut redémarrer Apache:
 
 *olex@ubuntu:\~\$ sudo systemctl restart apache2*
 
-Configuration de l'accès par mot de passe pour le compte root dans MySQL
+#### Configuration de l'accès par mot de passe pour le compte root dans MySQL
 
-Pour vous connecter à phpMyAdmin avec l'utilisateur root MySQL, vous devez changer la méthode d'authentification de auth\_socket à mysql\_native\_password si vous ne l'avez pas déjà fait. Pour ce faire, ouvrez une ligne de commande MySQL via un terminal :
+Pour vous connecter à phpMyAdmin avec l'utilisateur root MySQL, vous devez changer la méthode d'authentification de auth\_socket à mysql\_native\_password si vous ne l'avez pas déjà fait. Pour ce faire, ouvrez une ligne de commande MySQL via un terminal:
 
 *olex@ubuntu:\~\$ sudo mysql*
 
-Après il faut vérifier quelle méthode d'authentification vos comptes d'utilisateur MySQL utilisent avec la commande suivante :
+Après, avec la commande suivante, il faut vérifier quelle méthode d'authentification de vos comptes d'utilisateur MySQL utilise:
 
 *mysql\> SELECT user,authentication\_string,plugin,host FROM mysql.user;*
 
 ![](images/php1.png)
 
-L'utilisateur root utilise en fait la méthode d'authentification en utilisant le plugin auth\_socket. Pour configurer l'authentification par mot de passe pour le compte root, exécutez la commande ALTER USER suivante.
+L'utilisateur root utilise en fait la méthode d'authentification en utilisant le plugin auth\_socket. Pour configurer l'authentification par mot de passe pour le compte de root, exécutez la commande ALTER USER suivante.
 
 *mysql\> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql\_native\_password BY 'MyPass';*
 
@@ -127,7 +127,7 @@ Pour appliquer les modification, exécutez la commande FLUSH PRIVILEGES:
 
 ![](images/php12.png)
 
-Vérifiez les méthodes d'authentification pour confirmer que l'utilisateur root n'utilise plus le plug-in auth\_socket pour l'authentification :
+Vérifiez les méthodes d'authentification pour confirmer que l'utilisateur de root n'utilise plus le plug-in *auth\_socket* pour l'authentification:
 
 *mysql\> SELECT user,authentication\_string,plugin,host FROM mysql.user;*
 
