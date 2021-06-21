@@ -127,7 +127,7 @@ Pour appliquer les modification, exécutez la commande FLUSH PRIVILEGES:
 
 ![](images/php12.png)
 
-Vérifiez les méthodes d'authentification pour confirmer que l'utilisateur de root n'utilise plus le plug-in *auth\_socket* pour l'authentification:
+Vérifiez les méthodes d'authentification pour confirmer que l'utilisateur de root n'utilise plus le plug-in *auth\_socket*:
 
 *mysql\> SELECT user,authentication\_string,plugin,host FROM mysql.user;*
 
