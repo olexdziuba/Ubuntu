@@ -141,7 +141,7 @@ Vous pouvez désormais accéder à l'interface web en tapant le nom de domaine o
 
 J'ai utilisé un utilisateur root mais il vaut mieux créer un utilisateur séparé!
 
-Vous devez également configurer le fichier *.htaccess* pour augmenter la sécurité
+Vous devez également configurer le fichier *.htaccess* pour augmenter la sécurité.
 
 Le serveur est maintenant prêt à installer le CMS.
 
