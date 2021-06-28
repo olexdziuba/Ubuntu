@@ -3,7 +3,7 @@ Installation LAMP pour installation de CMS (Joomla et Wordpress)
 
 ![](images/php.jpg)
 
-Dans [l'article précédent](https://olexdziuba.github.io/two_siteweb_UBUNTU_apache/), nous avons mis deux sites Web sur un serveur en utilisant Apache. Pour le test, nous avons utilisé deux sites Web simples créés en html. Maintenant on va installer les sites Web en utilisant le CMS. Alors installons un site sur WordPress et un autre sur Joomla.
+Dans [l'article précédent](https://oleks.ca/2021/06/27/installation-de-deux-sites-web-sur-ubuntu-en-utilisant-apache/), nous avons mis deux sites Web sur un serveur en utilisant Apache. Pour le test, nous avons utilisé deux sites Web simples créés en html. Maintenant on va installer les sites Web en utilisant le CMS. Alors installons un site sur WordPress et un autre sur Joomla.
 
 Pour installer CMS comme WordPress ou Joomla il faut installer LAMP (Linux, Apache, MySQL, PHP). Jn a déjà installé Apache et il nous reste à installer MySQL et PHP et faire la configuration d'Apache. On va commencer l’installation de MySQL.
 
