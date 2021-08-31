@@ -32,3 +32,8 @@ RewriteCond %{Server_Port} !=443
 RewriteRule ^(.*)$ http://yourdomain.tld/$1 [R=301,L]
 
 ## disable hotlinking ##
+RewriteEngine on
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://your-webhosting-domain/.*$ [NC] [OR]
+RewriteCond %{HTTP_REFERER} !^http://www.your-webhosting-domain/.*$ [NC] [OR]
+RewriteRule .*\.(gif|GIF|jpg|JPG|bmp|BMP|wav|mp3|wmv|avi|mpeg)$ - [F]
