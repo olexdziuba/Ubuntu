@@ -31,3 +31,4 @@ RewriteEngine On
 RewriteCond %{Server_Port} !=443
 RewriteRule ^(.*)$ http://yourdomain.tld/$1 [R=301,L]
 
+## disable hotlinking ##
