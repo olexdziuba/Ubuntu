@@ -51,6 +51,7 @@ Deny from all
 Allow from all
 </Files>
 
-
-
-
+## Disable PHP Execution ##
+<Files *.php>
+deny from all
+</Files>
