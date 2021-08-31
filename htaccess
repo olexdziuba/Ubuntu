@@ -1,0 +1,33 @@
+## Protégez le fichier wp-config.php ##
+<files wp-config.php>
+    order allow,deny
+    deny from all
+</files>
+
+## Protégez wp-admin ##
+AuthUserFile /dev/null
+AuthGroupFile /dev/null
+AuthName "WordPress Admin Access Control"
+AuthType Basic
+<LIMIT GET>
+order deny,allow
+deny from all
+#  whitelist multiple IP addresses
+allow from xx.xx.xx.xxx
+allow from xx.xx.xx.xxx
+</LIMIT>
+
+## Désactiver la navigation dans les répertoires ##
+Options -Indexes
+
+## Redirection ##
+
+Redirect 301 /oldpage.html http://www.yourwebsite.com/newpage.html
+Redirect 302 /oldpage.html http://www.yourwebsite.com/newpage.html
+
+### de HTTP vers HTTPS ###
+# activate HTTPS
+RewriteEngine On
+RewriteCond %{Server_Port} !=443
+RewriteRule ^(.*)$ http://yourdomain.tld/$1 [R=301,L]
+
