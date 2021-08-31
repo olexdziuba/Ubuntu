@@ -37,3 +37,13 @@ RewriteCond %{HTTP_REFERER} !^$
 RewriteCond %{HTTP_REFERER} !^http://your-webhosting-domain/.*$ [NC] [OR]
 RewriteCond %{HTTP_REFERER} !^http://www.your-webhosting-domain/.*$ [NC] [OR]
 RewriteRule .*\.(gif|GIF|jpg|JPG|bmp|BMP|wav|mp3|wmv|avi|mpeg)$ - [F]
+
+## Réécrire l'ip au domaine ##
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$
+RewriteRule ^(.*)$ https://www.your-webhosting-domain/$1 [L,R=301]
+
+
+
+
