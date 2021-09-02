@@ -55,3 +55,10 @@ Allow from all
 <Files *.php>
 deny from all
 </Files>
+
+## Protection  .htaccess ##
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfy all
+</Files>
